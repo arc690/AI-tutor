@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GeniPlan - Lesson Plan Writer</title>
+  <link rel="icon" type="image/png" href="geniplan-logo.png">
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    /* CSS styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Other CSS styles */
+
+    body {
+      font-family: 'Roboto', Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #ffffff;
+    }
+
+    header {
+      background-color: #ffffff;
+      padding: 20px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 30px;
+      margin-right: 10px;
+    }
+
+    .logo h1 {
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    nav ul li {
+      margin-left: 20px;
+    }
+
+    nav ul li a {
+      color: #333;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #aaa;
+    }
+
+    section {
+      padding: 100px 0;
+      text-align: center;
+    }
+
+    section h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .input-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+
+    .input-container h3 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .input-container input[type="text"] {
+      width: 600px;
+      max-width: 100%;
+      padding: 15px;
+      font-size: 18px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s;
+      display: inline-block;
+    }
+
+    .input-container input[type="text"]:focus {
+      outline: none;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .input-container button {
+      margin-top: 20px;
+      padding: 15px 30px;
+      font-size: 20px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .input-container button:hover {
+      background-color: #555;
+    }
+
+    .lesson-plan {
+      text-align: left;
+      white-space: pre-line;
+      margin: 40px 0;
+      padding: 30px;
+      border: 1px solid #CCCCCC;
+      border-radius: 12px;
+      background-color: #fff;
+    }
+
+    .about {
+      background-color: #f5f5f5;
+      padding: 80px 0;
+    }
+
+    .about h2 {
+      font-size: 36px;
+      margin-bottom: 40px;
+    }
+
+    .about p {
+      font-size: 18px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .contact {
+      background-color: #f5f5f5;
+      padding: 80px 0;
+    }
+
+    .contact h2 {
+      font-size: 36px;
+      margin-bottom: 40px;
+    }
+
+    .contact p {
+      font-size: 18px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    footer {
+      background-color: #333;
+      padding: 20px;
+      color: #fff;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+    @media (max-width: 767px) {
+        /* Adjust the styles as needed for smaller screens */
+        .input-container input[type="text"] {
+          max-width: 100%;
+        }
+    }
+    /* Other CSS styles */
+  </style>
+  <script src="script.js"></script>
+</head>
+<body>
+  <div id="imageContainer"></div>
+  
+</head>
+<body>
+  
+  <header>
+    <nav>
+      <div class="logo">
+        <img src="geniplan-logo.png" alt="GeniPlan Logo">
+        <h1>GeniPlan</h1>
+      </div>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#generator">Generate Lesson Plan</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section id="hero">
+    <div class="hero-content">
+      <h1>GeniPlan</h1>
+      <p>AI-Powered Lesson Plan Writer</p>
+    </div>
+  </section>
+  
+  <section id="generator">
+    <div class="input-container">
+      <h3>Generate Lesson Plan</h3>
+      <input type="text" id="inputText" placeholder="Enter your topic and requirements...">
+      <button id="generateButton" onclick="generateLessonPlan()">Generate Lesson Plan</button>
+    </div>
+    <div class="lesson-plan" id="lessonPlan"></div>
+  </section>
+  
+  <section id="about" class="about">
+    <div class="about-content">
+      <h2>About GeniPlan</h2>
+      <p>GeniPlan is an innovative AI-powered lesson plan writer that helps teachers create engaging and comprehensive lesson plans effortlessly. Whether you're teaching algebra, history, or any other subject, GeniPlan is here to assist you in crafting lesson plans tailored to your students' needs.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="contact-content">
+      <h2>Contact Us</h2>
+      <p>If you have any questions or feedback, feel free to reach out to us. We would love to hear from you!</p>
+      <p>Email: contact@geniplan.com</p>
+      <p>or join our Discord</p>
+    </div>
+  </section>
+  <style>
+    /* CSS styles for generating animation */
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+    }
+  
+    @keyframes blink-caret {
+      50% {
+        border-color: transparent;
+      }
+    }
+  
+    .typing-animation {
+      border-right: 2px solid #333;
+      animation: typing 5.5s steps(30, end), blink-caret 0.75s step-end infinite;
+    }
+  </style>
+  
+  <script>
+    // Lesson plan templates for different subjects
+    // Add more lesson plan templates for other subjects as needed
+    const lessonPlanTemplates = {
+      algebra: `
+  Lesson Plan: Introduction to Algebra
+  
+  Objective:
+  By the end of this lesson, students will be able to understand and apply algebraic concepts.
+  
+  Materials:
+  - Whiteboard and markers
+  - Student notebooks and pencils
+  
+  Introduction (10 minutes):
+  1. In this class, we will learn about algebra and its importance in solving real-world problems.
+  2. Our teacher will introduce us to the basic concepts of variables, expressions, and equations.
+  
+  Direct Instruction (20 minutes):
+  1. The teacher will explain how arithmetic operations work in algebraic expressions.
+  2. We will learn how to solve simple equations step by step.
+  
+  Guided Practice (15 minutes):
+  1. The teacher will give us practice problems to work on algebraic expressions and equations.
+  2. We will work through the problems together as a class, and the teacher will encourage us to ask questions and participate actively.
+  
+  Independent Practice (15 minutes):
+  1. We will receive worksheets with additional problems to practice on our own.
+  2. The teacher will be available to help and provide assistance if we need it.
+  
+  Closure (5 minutes):
+  1. We will review the key points of the lesson and understand why algebra is useful in different fields.
+  2. The teacher will ask us to share what we have learned about algebraic concepts.
+  
+  Assessment:
+  Our understanding will be assessed based on our participation in class discussions and how well we complete the practice problems.`,
+      science: `
+  Lesson Plan: Introduction to Science
+  
+  Objective:
+  By the end of this lesson, students will be able to understand the scientific method and how it helps us learn about the world.
+  
+  Materials:
+  - Whiteboard and markers
+  - Student notebooks and pencils
+  
+  Introduction (10 minutes):
+  1. Our teacher will explain the importance of science in understanding the world around us.
+  2. We will learn about the scientific method and how scientists use it to investigate different phenomena.
+  
+  Direct Instruction (20 minutes):
+  1. The teacher will explain the steps of the scientific method, including observation, hypothesis formation, experimentation, and conclusion.
+  2. We will see examples of how the scientific method is used in everyday life and scientific research.
+  
+  Guided Practice (15 minutes):
+  1. We will conduct a hands-on activity or experiment to understand the scientific method in action.
+  2. Our teacher will encourage us to record our observations and draw conclusions based on our findings.
+  
+  Independent Practice (15 minutes):
+  1. We will be divided into groups and assigned a scientific question to investigate using the scientific method.
+  2. Each group will present their findings and conclusions to the class.
+  
+  Closure (5 minutes):
+  1. We will review the key steps of the scientific method and discuss its significance in advancing knowledge.
+  2. We will talk about the importance of critical thinking and evidence-based reasoning in scientific inquiry.
+  
+  Assessment:
+  Our understanding will be assessed based on our participation in group presentations and class discussions.`,
+      history: `
+  Lesson Plan: Introduction to History
+  
+  Objective:
+  By the end of this lesson, students will be able to understand why studying history is important and how it connects to the present.
+  
+  Materials:
+  - Whiteboard and markers
+  - Student notebooks and pencils
+  
+  Introduction (10 minutes):
+  1. In this class, we will explore the value of studying history to gain insights into human societies and cultures.
+  2. Our teacher will introduce the concept of historical inquiry and its role in interpreting past events.
+  
+  Direct Instruction (20 minutes):
+  1. We will receive an overview of key historical periods and events.
+  2. Our teacher will emphasize the importance of primary and secondary sources in reconstructing historical narratives.
+  
+  Guided Practice (15 minutes):
+  1. We will analyze historical artifacts, documents, or images to draw connections to the past.
+  2. Our teacher will encourage us to ask questions and think critically about historical evidence.
+  
+  Independent Practice (15 minutes):
+  1. We will be divided into groups and assigned a historical topic to research further.
+  2. Each group will present their findings to the class.
+  
+  Closure (5 minutes):
+  1. We will review the significance of studying history in understanding the present and shaping the future.
+  2. Our teacher will ask us to reflect on the role of history in shaping our identities and perspectives.
+  
+  Assessment:
+  Our understanding will be assessed based on our participation in group presentations and class discussions.`,
+      math: `
+  Lesson Plan: Introduction to Math
+  
+  Objective:
+  By the end of this lesson, students will be able to understand the basic concepts of mathematics and its applications in daily life.
+  
+  Materials:
+  - Whiteboard and markers
+  - Student notebooks and pencils
+  
+  Introduction (10 minutes):
+  1. Our teacher will introduce the importance of mathematics in various fields and careers.
+  2. We will discuss how math is used in solving problems and making decisions.
+  
+  Direct Instruction (20 minutes):
+  1. The teacher will cover the fundamental concepts of arithmetic, including addition, subtraction, multiplication, and division.
+  2. We will learn about basic geometric shapes and their properties.
+  
+  Guided Practice (15 minutes):
+  1. We will solve math problems as a class to practice the concepts covered in the lesson.
+  2. The teacher will provide explanations and guide us through the problem-solving process.
+  
+  Independent Practice (15 minutes):
+  1. We will receive worksheets with additional math problems to solve individually or in pairs.
+  2. Our teacher will be available to answer questions and provide assistance as needed.
+  
+  Closure (5 minutes):
+  1. We will review the key points of the lesson and discuss real-life applications of mathematics.
+  2. The teacher will encourage us to explore math beyond the classroom and appreciate its significance in everyday situations.
+  
+  Assessment:
+  Our understanding will be assessed based on our participation in class discussions and how well we complete the practice problems.`,
+      literature: `
+  Lesson Plan: Introduction to Literature
+  
+  Objective:
+  By the end of this lesson, students will be able to appreciate the beauty and impact of literature on our lives.
+  
+  Materials:
+  - Whiteboard and markers
+  - Student notebooks and pencils
+  
+  Introduction (10 minutes):
+  1. Our teacher will introduce the world of literature and its role in shaping cultures and societies.
+  2. We will discuss the different forms of literature, such as novels, poems, and plays.
+  
+  Direct Instruction (20 minutes):
+  1. The teacher will take us on a journey through literary masterpieces and their themes.
+  2. We will explore the power of storytelling and how literature reflects the human experience.
+  
+  Guided Practice (15 minutes):
+  1. We will read excerpts from famous literary works and analyze their literary devices.
+  2. Our teacher will encourage us to express our thoughts and emotions evoked by the texts.
+  
+  Independent Practice (15 minutes):
+  1. We will have the opportunity to select a literary work of our choice to read and reflect on.
+  2. Each of us will share our insights and interpretations with the class.
+  
+  Closure (5 minutes):
+  1. We will discuss how literature can inspire us and foster empathy and understanding.
+  2. Our teacher will encourage us to explore diverse literary works and broaden our perspectives.
+  
+  Assessment:
+  Our understanding will be assessed based on our individual analysis and class discussions.`,
+    };
+  
+    function generateLessonPlan() {
+      var topic = document.getElementById('inputText').value.toLowerCase();
+      var lessonPlan = lessonPlanTemplates[topic];
+      if (lessonPlan) {
+        // Display the generating animation
+        document.getElementById('lessonPlan').innerHTML = '<span class="typing-animation">Generating lesson plan for ' + topic + '...</span>';
+        // Add a delay to make it appear as if the AI is generating the lesson plan
+        setTimeout(function() {
+          document.getElementById('lessonPlan').innerHTML = lessonPlan;
+        }, 3000);
+      } else {
+        // If the topic is not recognized, show a generic message
+        document.getElementById('lessonPlan').innerText = 'Generating lesson plan for ' + topic + '...';
+        // Add a delay to make it appear as if the AI is generating the lesson plan
+        setTimeout(function() {
+          document.getElementById('lessonPlan').innerText = 'Sorry, no lesson plan available for this subject.';
+        }, 4000);
+      }
+    }
+  </script>
+  
+  <footer>
+    <p>© 2023 GeniPlan. All rights reserved.</p>
+  </footer>
+</body>
+</html>
