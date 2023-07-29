@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>GeniPlan - AI Lesson Plan Writer</title>
+  <title>GeniPlan - Lesson Plan Writer</title>
   <link rel="icon" type="image/png" href="favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
   <style>
@@ -11,6 +11,8 @@
       padding: 0;
       box-sizing: border-box;
     }
+
+    /* Other CSS styles */
 
     body {
       font-family: 'Roboto', Arial, sans-serif;
@@ -114,7 +116,7 @@
       margin-top: 20px;
       padding: 15px 30px;
       font-size: 20px;
-      background-color: #333;
+      background-image: linear-gradient(to bottom right, rgb(253, 48, 48), #ef4172); /* Gradient */
       color: #fff;
       border: none;
       border-radius: 8px;
@@ -135,6 +137,47 @@
       border-radius: 12px;
       background-color: #fff;
     }
+
+    .lesson-plan h4 {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .lesson-plan p {
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    .subject-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 30px;
+      }
+    
+      .subject-buttons button {
+        margin: 5px;
+        padding: 12px 24px;
+        font-size: 18px;
+        font-weight: bold;
+        background-color: #EF4146;
+        color: #fff;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
+    
+      .subject-buttons button:hover {
+        background-color: #EF4146;
+      }
+    
+      .subject-buttons button:focus {
+        outline: none;
+        background-color: #8e3859;
+      }
 
     .about {
       background-color: #f5f5f5;
@@ -183,52 +226,17 @@
     html {
       scroll-behavior: smooth;
     }
-
-    /* Generating animation styles */
-    @keyframes typing {
-      from {
-        width: 0;
-      }
+    @media (max-width: 767px) {
+        /* Adjust the styles as needed for smaller screens */
+        .input-container input[type="text"] {
+          max-width: 100%;
+        }
     }
-
-    @keyframes blink-caret {
-      50% {
-        border-color: transparent;
-      }
-    }
-
-    .typing-animation {
-      border-right: 2px solid #333;
-      animation: typing 5.5s steps(30, end), blink-caret 0.75s step-end infinite;
-    }
-
-    /* Subject buttons styles */
-    .subject-buttons {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 20px;
-    }
-
-    .subject-buttons button {
-      margin: 0 10px;
-      padding: 12px 20px;
-      font-size: 18px;
-      background-color: #333;
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    .subject-buttons button:hover {
-      background-color: #555;
-    }
+    /* Other CSS styles */
   </style>
   <script src="script.js"></script>
 </head>
 <body>
-
   <header>
     <nav>
       <div class="logo">
@@ -249,7 +257,7 @@
       <p>AI-Powered Lesson Plan Writer</p>
     </div>
   </section>
-
+  
   <section id="generator">
     <div class="input-container">
       <h3>Generate Lesson Plan</h3>
@@ -262,15 +270,15 @@
       <button onclick="selectSubject('history')">History</button>
       <button onclick="selectSubject('math')">Math</button>
       <button onclick="selectSubject('literature')">Literature</button>
-      <!-- Add more subject buttons as needed -->
+      <!-- Add more subjects here -->
     </div>
     <div class="lesson-plan" id="lessonPlan"></div>
   </section>
-
+  
   <section id="about" class="about">
     <div class="about-content">
       <h2>About GeniPlan</h2>
-      <p>GeniPlan is an innovative AI-powered lesson plan writer that helps teachers create engaging and comprehensive lesson plans effortlessly. Whether you're teaching algebra, history, math, science, literature, or any other subject, GeniPlan is here to assist you in crafting lesson plans tailored to your students' needs.</p>
+      <p>GeniPlan is an innovative AI-powered lesson plan writer that helps teachers create engaging and comprehensive lesson plans effortlessly. Whether you're teaching algebra, history, or any other subject, GeniPlan is here to assist you in crafting lesson plans tailored to your students' needs.</p>
     </div>
   </section>
 
@@ -282,14 +290,28 @@
       <p>or join our Discord</p>
     </div>
   </section>
-
-  <footer>
-    <p>© 2023 GeniPlan. All rights reserved.</p>
-  </footer>
-
+  <style>
+    /* CSS styles for generating animation */
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+    }
+  
+    @keyframes blink-caret {
+      50% {
+        border-color: transparent;
+      }
+    }
+  
+    .typing-animation {
+      border-right: 2px solid #333;
+      animation: typing 5.5s steps(30, end), blink-caret 0.75s step-end infinite;
+    }
+  </style>
+  
   <script>
     // Lesson plan templates for different subjects
-    // Add more lesson plan templates for other subjects as needed
     const lessonPlanTemplates = {
       algebra: `
   Lesson Plan: Introduction to Algebra
@@ -310,19 +332,19 @@
   2. We will learn how to solve simple equations step by step.
   
   Guided Practice (15 minutes):
-  1. The teacher will give us practice problems to work on algebraic expressions and equations.
-  2. We will work through the problems together as a class, and the teacher will encourage us to ask questions and participate actively.
+  1. We will receive practice problems to work on algebraic expressions and equations.
+  2. The teacher will guide us through the problem-solving process.
   
   Independent Practice (15 minutes):
-  1. We will receive worksheets with additional problems to practice on our own.
-  2. The teacher will be available to help and provide assistance if we need it.
+  1. We will be assigned additional problems to practice on our own.
+  2. The teacher will be available to answer questions and provide assistance if needed.
   
   Closure (5 minutes):
   1. We will review the key points of the lesson and understand why algebra is useful in different fields.
-  2. The teacher will ask us to share what we have learned about algebraic concepts.
+  2. The teacher will encourage us to apply algebraic concepts in real-life scenarios.
   
   Assessment:
-  Our understanding will be assessed based on our participation in class discussions and how well we complete the practice problems.`,
+  Our understanding will be assessed based on our participation in class discussions and how well we solve the practice problems.`,
       science: `
   Lesson Plan: Introduction to Science
   
@@ -350,8 +372,8 @@
   2. Each group will present their findings and conclusions to the class.
   
   Closure (5 minutes):
-  1. We will review the key steps of the scientific method and discuss its significance in advancing knowledge.
-  2. We will talk about the importance of critical thinking and evidence-based reasoning in scientific inquiry.
+  1. We will review the significance of studying science and how it contributes to advancements in society.
+  2. The teacher will encourage us to explore scientific topics beyond the classroom.
   
   Assessment:
   Our understanding will be assessed based on our participation in group presentations and class discussions.`,
@@ -367,7 +389,7 @@
   
   Introduction (10 minutes):
   1. In this class, we will explore the value of studying history to gain insights into human societies and cultures.
-  2. Our teacher will introduce the concept of historical inquiry and its role in interpreting past events.
+   2. Our teacher will introduce the concept of historical inquiry and its role in interpreting past events.
   
   Direct Instruction (20 minutes):
   1. We will receive an overview of key historical periods and events.
@@ -382,8 +404,8 @@
   2. Each group will present their findings to the class.
   
   Closure (5 minutes):
-  1. We will review the significance of studying history in understanding the present and shaping the future.
-  2. Our teacher will ask us to reflect on the role of history in shaping our identities and perspectives.
+  1. We will discuss how studying history helps us better understand current events and societies.
+  2. Our teacher will encourage us to appreciate the complexities of historical narratives.
   
   Assessment:
   Our understanding will be assessed based on our participation in group presentations and class discussions.`,
@@ -451,7 +473,43 @@
   
   Assessment:
   Our understanding will be assessed based on our individual analysis and class discussions.`,
+      geography: `
+  Lesson Plan: Introduction to Geography
+  
+  Objective:
+  By the end of this lesson, students will be able to understand the importance of geography in understanding our planet and its diverse environments.
+  
+  Materials:
+  - World map and globe
+  - Student notebooks and pencils
+  
+  Introduction (10 minutes):
+  1. Our teacher will explain the significance of geography in studying Earth's landscapes and human interactions.
+  2. We will learn about the five themes of geography: location, place, human-environment interaction, movement, and region.
+  
+  Direct Instruction (20 minutes):
+  1. The teacher will explore different types of maps and explain how to read them.
+  2. We will discover the diversity of climates, landforms, and ecosystems around the world.
+  
+  Guided Practice (15 minutes):
+  1. We will examine maps to understand how geography influences cultures, trade, and historical events.
+  2. The teacher will facilitate discussions about the interconnections between geography and societies.
+  
+  Independent Practice (15 minutes):
+  1. We will work on a geography project, researching a country's geography and presenting our findings.
+  2. Each student will showcase their project to the class.
+  
+  Closure (5 minutes):
+  1. We will reflect on the significance of geography in shaping our understanding of the world.
+  2. Our teacher will encourage us to stay curious and explore geographical phenomena in our daily lives.
+  
+  Assessment:
+  Our understanding will be assessed based on our participation in class discussions and the quality of our geography project presentations.`,
     };
+
+    function selectSubject(subject) {
+      document.getElementById('inputText').value = subject;
+    }
 
     function generateLessonPlan() {
       var topic = document.getElementById('inputText').value.toLowerCase();
@@ -462,15 +520,20 @@
         // Add a delay to make it appear as if the AI is generating the lesson plan
         setTimeout(function() {
           document.getElementById('lessonPlan').innerHTML = lessonPlan;
-        }, 4000); // 4 seconds delay
+        }, 4000);
       } else {
-        document.getElementById('lessonPlan').innerHTML = "Lesson plan not available for this topic. Please try another subject.";
+        // If the topic is not recognized, show a generic message
+        document.getElementById('lessonPlan').innerText = 'Generating lesson plan for ' + topic + '...';
+        // Add a delay to make it appear as if the AI is generating the lesson plan
+        setTimeout(function() {
+          document.getElementById('lessonPlan').innerText = 'Sorry, no lesson plan available for this subject.';
+        }, 5000);
       }
     }
-
-    function selectSubject(subject) {
-      document.getElementById('inputText').value = subject;
-    }
   </script>
+  
+  <footer>
+    <p>© 2023 GeniPlan. All rights reserved.</p>
+  </footer>
 </body>
 </html>
