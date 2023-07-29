@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>GeniPlan - Lesson Plan Writer</title>
+  <title>GeniPlan - AI Lesson Plan Writer</title>
   <link rel="icon" type="image/png" href="geniplan-logo.png">
   <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
   <style>
@@ -12,13 +12,11 @@
       box-sizing: border-box;
     }
 
-    /* Other CSS styles */
-
     body {
       font-family: 'Roboto', Arial, sans-serif;
       line-height: 1.6;
       color: #333;
-      background-color: #ffffff;
+      background-color: #f9f9f9;
     }
 
     header {
@@ -185,22 +183,52 @@
     html {
       scroll-behavior: smooth;
     }
-    @media (max-width: 767px) {
-        /* Adjust the styles as needed for smaller screens */
-        .input-container input[type="text"] {
-          max-width: 100%;
-        }
+
+    /* Generating animation styles */
+    @keyframes typing {
+      from {
+        width: 0;
+      }
     }
-    /* Other CSS styles */
+
+    @keyframes blink-caret {
+      50% {
+        border-color: transparent;
+      }
+    }
+
+    .typing-animation {
+      border-right: 2px solid #333;
+      animation: typing 5.5s steps(30, end), blink-caret 0.75s step-end infinite;
+    }
+
+    /* Subject buttons styles */
+    .subject-buttons {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .subject-buttons button {
+      margin: 0 10px;
+      padding: 12px 20px;
+      font-size: 18px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .subject-buttons button:hover {
+      background-color: #555;
+    }
   </style>
   <script src="script.js"></script>
 </head>
 <body>
-  <div id="imageContainer"></div>
-  
-</head>
-<body>
-  
+
   <header>
     <nav>
       <div class="logo">
@@ -221,20 +249,28 @@
       <p>AI-Powered Lesson Plan Writer</p>
     </div>
   </section>
-  
+
   <section id="generator">
     <div class="input-container">
       <h3>Generate Lesson Plan</h3>
       <input type="text" id="inputText" placeholder="Enter your topic and requirements...">
       <button id="generateButton" onclick="generateLessonPlan()">Generate Lesson Plan</button>
     </div>
+    <div class="subject-buttons">
+      <button onclick="selectSubject('algebra')">Algebra</button>
+      <button onclick="selectSubject('science')">Science</button>
+      <button onclick="selectSubject('history')">History</button>
+      <button onclick="selectSubject('math')">Math</button>
+      <button onclick="selectSubject('literature')">Literature</button>
+      <!-- Add more subject buttons as needed -->
+    </div>
     <div class="lesson-plan" id="lessonPlan"></div>
   </section>
-  
+
   <section id="about" class="about">
     <div class="about-content">
       <h2>About GeniPlan</h2>
-      <p>GeniPlan is an innovative AI-powered lesson plan writer that helps teachers create engaging and comprehensive lesson plans effortlessly. Whether you're teaching algebra, history, or any other subject, GeniPlan is here to assist you in crafting lesson plans tailored to your students' needs.</p>
+      <p>GeniPlan is an innovative AI-powered lesson plan writer that helps teachers create engaging and comprehensive lesson plans effortlessly. Whether you're teaching algebra, history, math, science, literature, or any other subject, GeniPlan is here to assist you in crafting lesson plans tailored to your students' needs.</p>
     </div>
   </section>
 
@@ -246,26 +282,11 @@
       <p>or join our Discord</p>
     </div>
   </section>
-  <style>
-    /* CSS styles for generating animation */
-    @keyframes typing {
-      from {
-        width: 0;
-      }
-    }
-  
-    @keyframes blink-caret {
-      50% {
-        border-color: transparent;
-      }
-    }
-  
-    .typing-animation {
-      border-right: 2px solid #333;
-      animation: typing 5.5s steps(30, end), blink-caret 0.75s step-end infinite;
-    }
-  </style>
-  
+
+  <footer>
+    <p>© 2023 GeniPlan. All rights reserved.</p>
+  </footer>
+
   <script>
     // Lesson plan templates for different subjects
     // Add more lesson plan templates for other subjects as needed
@@ -431,7 +452,7 @@
   Assessment:
   Our understanding will be assessed based on our individual analysis and class discussions.`,
     };
-  
+
     function generateLessonPlan() {
       var topic = document.getElementById('inputText').value.toLowerCase();
       var lessonPlan = lessonPlanTemplates[topic];
@@ -441,20 +462,15 @@
         // Add a delay to make it appear as if the AI is generating the lesson plan
         setTimeout(function() {
           document.getElementById('lessonPlan').innerHTML = lessonPlan;
-        }, 3000);
+        }, 4000); // 4 seconds delay
       } else {
-        // If the topic is not recognized, show a generic message
-        document.getElementById('lessonPlan').innerText = 'Generating lesson plan for ' + topic + '...';
-        // Add a delay to make it appear as if the AI is generating the lesson plan
-        setTimeout(function() {
-          document.getElementById('lessonPlan').innerText = 'Sorry, no lesson plan available for this subject.';
-        }, 4000);
+        document.getElementById('lessonPlan').innerHTML = "Lesson plan not available for this topic. Please try another subject.";
       }
     }
+
+    function selectSubject(subject) {
+      document.getElementById('inputText').value = subject;
+    }
   </script>
-  
-  <footer>
-    <p>© 2023 GeniPlan. All rights reserved.</p>
-  </footer>
 </body>
 </html>
