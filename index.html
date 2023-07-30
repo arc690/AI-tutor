@@ -290,6 +290,52 @@
       <p>or join our Discord</p>
     </div>
   </section>
+
+  <style>
+    /* ... Previous CSS styles ... */
+  
+    /* CSS styles for generating animation */
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+    }
+  
+    @keyframes blink-caret {
+      50% {
+        border-color: transparent;
+      }
+    }
+  
+    .typing-animation {
+      border-right: 2px solid #333;
+      animation: typing 5.5s steps(30, end), blink-caret 0.75s step-end infinite;
+    }
+  </style>
+  
+  <script>
+    // ... Previous JavaScript code ...
+  
+    function generateLessonPlan() {
+      var topic = document.getElementById('inputText').value.toLowerCase();
+      var lessonPlan = lessonPlanTemplates[topic];
+      if (lessonPlan) {
+        // Display the generating animation
+        document.getElementById('lessonPlan').innerHTML = '<span class="typing-animation">Generating lesson plan for ' + topic + '...</span>';
+        // Add a delay to make it appear as if the AI is generating the lesson plan
+        setTimeout(function() {
+          document.getElementById('lessonPlan').innerHTML = lessonPlan;
+        }, 4000);
+      } else {
+        // If the topic is not recognized, show a generic message
+        document.getElementById('lessonPlan').innerText = 'Generating lesson plan for ' + topic + '...';
+        // Add a delay to make it appear as if the AI is generating the lesson plan
+        setTimeout(function() {
+          document.getElementById('lessonPlan').innerText = 'Sorry, no lesson plan available for this subject.';
+        }, 5000);
+      }
+    }
+  </script>
   <style>
     /* CSS styles for generating animation */
     @keyframes typing {
@@ -505,7 +551,377 @@
   
   Assessment:
   Our understanding will be assessed based on our participation in class discussions and the quality of our geography project presentations.`,
-    };
+
+  english: `
+  Lesson Plan: Introduction to English Literature
+  
+  Objective:
+  By the end of this lesson, students will gain an understanding of the elements of English literature and its impact on culture.
+  
+  Materials:
+  - Whiteboard and markers
+  - Student notebooks and pencils
+  
+  Introduction (10 minutes):
+  1. Our teacher will introduce the significance of English literature in storytelling and human expression.
+  2. We will explore the different genres of English literature, such as poetry, drama, and prose.
+  
+  Direct Instruction (20 minutes):
+  1. The teacher will cover literary devices like simile, metaphor, and personification.
+  2. We will analyze excerpts from classic English literary works.
+  
+  Guided Practice (15 minutes):
+  1. We will practice identifying literary devices in short passages.
+  2. Our teacher will provide feedback on our analyses.
+  
+  Independent Practice (15 minutes):
+  1. We will be assigned a literary piece to read and prepare a brief analysis.
+  2. Each student will present their analysis to the class.
+  
+  Closure (5 minutes):
+  1. We will reflect on the significance of English literature in shaping cultures and societal values.
+  2. The teacher will encourage us to continue exploring and appreciating English literary works.
+  
+  Assessment:
+  Our understanding will be assessed based on our class participation and the quality of our literary analyses.`,
+  
+      computer_science: `
+  Lesson Plan: Introduction to Computer Science
+  
+  Objective:
+  By the end of this lesson, students will understand the fundamentals of computer science and its applications.
+  
+  Materials:
+  - Computers or laptops with internet access
+  - Student notebooks and pencils
+  
+  Introduction (10 minutes):
+  1. Our teacher will introduce the field of computer science and its relevance in the modern world.
+  2. We will learn about the various branches of computer science, such as programming, algorithms, and data structures.
+  
+  Direct Instruction (20 minutes):
+  1. The teacher will explain the basics of programming using a simple language like Python.
+  2. We will explore how algorithms and data structures are used in problem-solving.
+  
+  Guided Practice (15 minutes):
+  1. We will work on coding exercises to reinforce our understanding of programming concepts.
+  2. Our teacher will provide guidance and assistance as we code.
+  
+  Independent Practice (15 minutes):
+  1. We will be given coding challenges to solve individually or in pairs.
+  2. The teacher will review our solutions and provide feedback.
+  
+  Closure (5 minutes):
+  1. We will discuss real-life applications of computer science in various fields.
+  2. The teacher will encourage us to explore further in the field of computer science.
+  
+  Assessment:
+  Our understanding will be assessed based on our participation in coding exercises and problem-solving challenges.`,
+  
+      // Add more subjects and lesson plan templates here...
+    
+      biology: `
+      Lesson Plan: Introduction to Biology
+      
+      Objective:
+      By the end of this lesson, students will understand the basic principles of biology and the diversity of life.
+      
+      Materials:
+      - Whiteboard and markers
+      - Student notebooks and pencils
+      
+      Introduction (10 minutes):
+      1. Our teacher will introduce the field of biology and its importance in studying living organisms.
+      2. We will learn about the scientific method and how it is applied in biology.
+      
+      Direct Instruction (20 minutes):
+      1. The teacher will cover the characteristics of living organisms and the levels of biological organization.
+      2. We will explore the major branches of biology, such as botany, zoology, and microbiology.
+      
+      Guided Practice (15 minutes):
+      1. We will examine specimens, such as plants or microorganisms, and identify their unique features.
+      2. Our teacher will guide us through the process of classifying organisms based on their characteristics.
+      
+      Independent Practice (15 minutes):
+      1. We will conduct a simple experiment or observation related to biology.
+      2. Each student will record their findings and conclusions.
+      
+      Closure (5 minutes):
+      1. We will discuss the significance of biology in understanding ecosystems and environmental issues.
+      2. The teacher will encourage us to explore further into the wonders of the natural world.
+      
+      Assessment:
+      Our understanding will be assessed based on our participation in class discussions and the quality of our experiment reports.`,
+      
+          art: `
+      Lesson Plan: Introduction to Art and Creativity
+      
+      Objective:
+      By the end of this lesson, students will appreciate the significance of art and express their creativity through different mediums.
+      
+      Materials:
+      - Art supplies (paints, brushes, sketchbooks, etc.)
+      - Student notebooks and pencils
+      
+      Introduction (10 minutes):
+      1. Our teacher will introduce the world of art and its impact on human expression.
+      2. We will explore various forms of art, such as painting, drawing, and sculpture.
+      
+      Direct Instruction (20 minutes):
+      1. The teacher will cover the basic principles of art, including line, shape, color, and texture.
+      2. We will learn about famous artists and their masterpieces.
+      
+      Guided Practice (15 minutes):
+      1. We will engage in a guided drawing or painting activity to practice the art principles.
+      2. Our teacher will provide constructive feedback and encourage creative thinking.
+      
+      Independent Practice (15 minutes):
+      1. We will have the opportunity to create our own artwork using the techniques learned.
+      2. Each student will present their artwork to the class and share their creative process.
+      
+      Closure (5 minutes):
+      1. We will discuss how art reflects cultural values and emotions.
+      2. The teacher will encourage us to continue exploring our creativity through art.
+      
+      Assessment:
+      Our understanding will be assessed based on our class participation and the originality of our artwork.`,
+      
+          physical_education: `
+      Lesson Plan: Introduction to Physical Education and Fitness
+      
+      Objective:
+      By the end of this lesson, students will understand the importance of physical activity for overall health and fitness.
+      
+      Materials:
+      - Sports equipment (balls, cones, etc.)
+      - Student notebooks and pencils
+      
+      Introduction (10 minutes):
+      1. Our teacher will introduce the concept of physical education and its role in promoting a healthy lifestyle.
+      2. We will learn about the components of fitness, such as cardiovascular endurance and flexibility.
+      
+      Direct Instruction (20 minutes):
+      1. The teacher will lead us in a warm-up exercise to demonstrate the importance of warming up before physical activity.
+      2. We will engage in various physical activities to improve different fitness components.
+      
+      Guided Practice (15 minutes):
+      1. We will participate in team sports or group exercises to develop teamwork and cooperation.
+      2. Our teacher will provide tips on proper form and technique during physical activities.
+      
+      Independent Practice (15 minutes):
+      1. We will be given fitness challenges to complete individually or with a partner.
+      2. Each student will record their progress and achievements.
+      
+      Closure (5 minutes):
+      1. We will discuss the benefits of regular physical activity on mental and physical health.
+      2. The teacher will encourage us to adopt an active lifestyle outside of school.
+      
+      Assessment:
+      Our understanding will be assessed based on our participation in physical activities and the improvement in our fitness levels.`,
+      
+          // Add more subjects and lesson plan templates here...
+          chemistry: `
+          Lesson Plan: Introduction to Chemistry
+          
+          Objective:
+          By the end of this lesson, students will understand the basic principles of chemistry and the properties of matter.
+          
+          Materials:
+          - Whiteboard and markers
+          - Student notebooks and pencils
+          
+          Introduction (10 minutes):
+          1. Our teacher will introduce the field of chemistry and its importance in understanding the composition of matter.
+          2. We will learn about the scientific method and how it is applied in chemistry.
+          
+          Direct Instruction (20 minutes):
+          1. The teacher will cover the three states of matter: solid, liquid, and gas.
+          2. We will explore the properties of elements, compounds, and mixtures.
+          
+          Guided Practice (15 minutes):
+          1. We will conduct simple chemical experiments to observe changes in matter.
+          2. Our teacher will guide us through the process of recording observations.
+          
+          Independent Practice (15 minutes):
+          1. We will be given a chemical problem to solve or a concept to research further.
+          2. Each student will present their findings to the class.
+          
+          Closure (5 minutes):
+          1. We will discuss the real-life applications of chemistry in various industries and everyday life.
+          2. The teacher will encourage us to explore further into the fascinating world of chemistry.
+          
+          Assessment:
+          Our understanding will be assessed based on our class participation and the quality of our research presentations.`,
+          
+              music: `
+          Lesson Plan: Introduction to Music and Rhythm
+          
+          Objective:
+          By the end of this lesson, students will appreciate the art of music and understand the basics of rhythm.
+          
+          Materials:
+          - Musical instruments (if available)
+          - Student notebooks and pencils
+          
+          Introduction (10 minutes):
+          1. Our teacher will introduce the world of music and its impact on human emotions and culture.
+          2. We will learn about different music genres and styles.
+          
+          Direct Instruction (20 minutes):
+          1. The teacher will cover the basics of rhythm, including note values and time signatures.
+          2. We will explore musical elements like melody, harmony, and dynamics.
+          
+          Guided Practice (15 minutes):
+          1. We will participate in a group music activity to practice rhythm and musical coordination.
+          2. Our teacher will provide guidance and feedback on our musical performance.
+          
+          Independent Practice (15 minutes):
+          1. We will have the opportunity to create our own musical compositions using rhythm and simple melodies.
+          2. Each student or group will perform their composition for the class.
+          
+          Closure (5 minutes):
+          1. We will discuss how music can express emotions and tell stories.
+          2. The teacher will encourage us to explore different musical instruments and genres.
+          
+          Assessment:
+          Our understanding will be assessed based on our musical participation and the originality of our compositions.`,
+          
+              social_studies: `
+          Lesson Plan: Introduction to Social Studies and Culture
+          
+          Objective:
+          By the end of this lesson, students will understand the importance of social studies in understanding societies and cultural diversity.
+          
+          Materials:
+          - Whiteboard and markers
+          - Student notebooks and pencils
+          
+          Introduction (10 minutes):
+          1. Our teacher will introduce the field of social studies and its role in exploring human societies and civilizations.
+          2. We will learn about the different branches of social studies, such as anthropology, sociology, and history.
+          
+          Direct Instruction (20 minutes):
+          1. The teacher will cover the concept of culture and its influence on human behavior and traditions.
+          2. We will explore cultural diversity and the significance of intercultural understanding.
+          
+          Guided Practice (15 minutes):
+          1. We will engage in discussions or activities related to cultural differences and similarities.
+          2. Our teacher will facilitate conversations about respecting and appreciating diverse cultures.
+          
+          Independent Practice (15 minutes):
+          1. We will be assigned a cultural research project to explore a specific aspect of a culture.
+          2. Each student will present their findings and insights to the class.
+          
+          Closure (5 minutes):
+          1. We will discuss how social studies can contribute to building a more inclusive and tolerant society.
+          2. The teacher will encourage us to remain curious and open-minded about the world's cultures.
+          
+          Assessment:
+          Our understanding will be assessed based on our participation in class discussions and the quality of our cultural research presentations.`,
+          
+              // Add more subjects and lesson plan templates here...
+              hindi: `
+Lesson Plan: Introduction to Hindi Language
+
+Objective:
+By the end of this lesson, students will understand the basics of the Hindi language and be able to introduce themselves.
+
+Materials:
+- Whiteboard and markers
+- Student notebooks and pencils
+
+Introduction (10 minutes):
+1. Our teacher will introduce the Hindi language and its significance in Indian culture.
+2. We will learn the Hindi alphabet and common greetings.
+
+Direct Instruction (20 minutes):
+1. The teacher will teach us simple Hindi phrases and expressions.
+2. We will practice speaking and writing basic sentences in Hindi.
+
+Guided Practice (15 minutes):
+1. We will engage in dialogues with each other to practice using Hindi greetings and expressions.
+2. Our teacher will provide feedback and correct pronunciation.
+
+Independent Practice (15 minutes):
+1. We will write short self-introductions in Hindi.
+2. Each student will present their introduction to the class.
+
+Closure (5 minutes):
+1. We will discuss the importance of language in fostering cultural understanding.
+2. The teacher will encourage us to continue learning Hindi and explore other languages.
+
+Assessment:
+Our understanding will be assessed based on our class participation and the quality of our self-introductions in Hindi.`,
+
+    kannada: `
+Lesson Plan: Introduction to Kannada Language
+
+Objective:
+By the end of this lesson, students will be familiar with the Kannada language and be able to use common expressions.
+
+Materials:
+- Whiteboard and markers
+- Student notebooks and pencils
+
+Introduction (10 minutes):
+1. Our teacher will introduce the Kannada language and its significance in Karnataka culture.
+2. We will learn the Kannada alphabet and basic conversational phrases.
+
+Direct Instruction (20 minutes):
+1. The teacher will teach us simple Kannada sentences related to daily life.
+2. We will practice speaking and writing basic expressions in Kannada.
+
+Guided Practice (15 minutes):
+1. We will engage in role-play activities to practice using Kannada in different scenarios.
+2. Our teacher will provide guidance and correct our language usage.
+
+Independent Practice (15 minutes):
+1. We will write short dialogues or stories in Kannada.
+2. Each student will share their writing with the class.
+
+Closure (5 minutes):
+1. We will discuss the significance of preserving regional languages and cultures.
+2. The teacher will encourage us to continue exploring the beauty of Kannada language and literature.
+
+Assessment:
+Our understanding will be assessed based on our participation in class activities and the quality of our written work in Kannada.`,
+
+    french: `
+Lesson Plan: Introduction to French Language
+
+Objective:
+By the end of this lesson, students will be introduced to the French language and be able to use basic phrases.
+
+Materials:
+- Whiteboard and markers
+- Student notebooks and pencils
+
+Introduction (10 minutes):
+1. Our teacher will introduce the French language and its importance as an international language.
+2. We will learn basic French greetings and expressions.
+
+Direct Instruction (20 minutes):
+1. The teacher will teach us simple French sentences related to greetings, introductions, and everyday interactions.
+2. We will practice speaking and writing basic expressions in French.
+
+Guided Practice (15 minutes):
+1. We will engage in conversational activities with each other to practice using French expressions.
+2. Our teacher will provide guidance on pronunciation and language usage.
+
+Independent Practice (15 minutes):
+1. We will create mini-dialogues in French with a partner.
+2. Each pair will perform their dialogue in front of the class.
+
+Closure (5 minutes):
+1. We will discuss the benefits of learning a foreign language and its cultural implications.
+2. The teacher will encourage us to continue exploring the French language and Francophone cultures.
+
+Assessment:
+Our understanding will be assessed based on our participation in class conversations and the quality of our mini-dialogues in French.`,
+
+    // Add more subjects and lesson plan templates here...
+  };
+      
 
     function selectSubject(subject) {
       document.getElementById('inputText').value = subject;
