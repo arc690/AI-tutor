@@ -379,6 +379,38 @@
     </div>
     <div class="lesson-plan" id="lessonPlan"></div>
   </section>
+  <div class="regenerate-section">
+    <input type="text" id="regenerateInput" placeholder="Enter the subject for alternative lesson plan">
+    <button id="regenerateButton" onclick="regenerateLessonPlan()">
+      <img src="regenerate.png" alt="regenerate" />Regenerate
+    </button>
+  </div>
+
+
+  <script>
+    // ... Previous JavaScript code ...
+
+    // Regenerate another lesson plan for the entered subject
+    function regenerateLessonPlan() {
+      var topic = document.getElementById('regenerateInput').value.toLowerCase();
+      var lessonPlan = lessonPlanTemplates[topic];
+      if (lessonPlan) {
+        // Display the generating animation
+        document.getElementById('lessonPlan').innerHTML = '<span class="typing-animation">Generating lesson plan for ' + topic + '...</span>';
+        // Add a delay to make it appear as if the AI is generating the lesson plan
+        setTimeout(function() {
+          document.getElementById('lessonPlan').innerHTML = lessonPlan;
+        }, 4000);
+      } else {
+        // If the topic is not recognized, show a generic message
+        document.getElementById('lessonPlan').innerText = 'Generating lesson plan for ' + topic + '...';
+        // Add a delay to make it appear as if the AI is generating the lesson plan
+        setTimeout(function() {
+          document.getElementById('lessonPlan').innerText = 'Sorry, no lesson plan available for this subject.';
+        }, 5000);
+      }
+    }
+  </script>
   
   <section id="about" class="about">
     <div class="about-content">
@@ -416,6 +448,41 @@
       border-right: 2px solid #333;
       animation: typing 9.5s steps(30, end), blink-caret 0.75s step-end infinite;
     }
+    .regenerate-section {
+        text-align: center;
+        margin-top: 30px;
+      }
+  
+      .regenerate-section input[type="text"] {
+        width: 400px;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin-right: 10px;
+      }
+  
+      .regenerate-section button {
+        padding: 15px 30px;
+        font-size: 18px;
+        color: #fff;
+        background-color: #1A7F64;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
+  
+      .regenerate-section button:hover {
+        background-color: #15614d;
+      }
+      .regenerate-section button img {
+        width: 16px;
+        height: 16px;
+        vertical-align: middle;
+      }
   </style>
   
   <script>
@@ -496,6 +563,40 @@
   
   Assessment:
   Our understanding will be assessed based on our participation in class discussions and how well we solve the practice problems.`,
+
+  geometry: `
+  Lesson Plan: Introduction to Geometry
+
+  Objective:
+  By the end of this lesson, students will be able to understand basic geometric concepts and properties.
+
+  Materials:
+  - Whiteboard and markers
+  - Student notebooks and pencils
+  - Geometric shapes (printed or drawn on cards)
+
+  Introduction (10 minutes):
+  1. Our teacher will introduce the study of geometry and its relevance in various fields.
+  2. We will learn about points, lines, and planes as fundamental building blocks of geometry.
+
+  Direct Instruction (20 minutes):
+  1. The teacher will explain different types of angles, such as acute, obtuse, and right angles.
+  2. We will explore properties of triangles, including equilateral, isosceles, and scalene triangles.
+
+  Guided Practice (15 minutes):
+  1. We will work together on geometric exercises involving angles and triangles.
+  2. Our teacher will provide step-by-step guidance to solve geometric problems.
+
+  Independent Practice (15 minutes):
+  1. We will receive worksheets with geometric problems to solve individually or in pairs.
+  2. Our teacher will be available to answer questions and provide assistance as needed.
+
+  Closure (5 minutes):
+  1. We will review the key geometric concepts learned in the lesson.
+  2. The teacher will encourage us to observe geometric shapes and angles in our surroundings.
+
+  Assessment:
+  Our understanding will be assessed based on our participation in class discussions and how well we complete the practice problems.`,
       science: `
   Lesson Plan: Introduction to Science
   
@@ -560,6 +661,71 @@
   
   Assessment:
   Our understanding will be assessed based on our participation in group presentations and class discussions.`,
+
+  mathematics: `
+  Lesson Plan: Introduction to Math
+  
+  Objective:
+  By the end of this lesson, students will be able to understand the basic concepts of mathematics and its applications in daily life.
+  
+  Materials:
+  - Whiteboard and markers
+  - Student notebooks and pencils
+  
+  Introduction (10 minutes):
+  1. Our teacher will introduce the importance of mathematics in various fields and careers.
+  2. We will discuss how math is used in solving problems and making decisions.
+  
+  Direct Instruction (20 minutes):
+  1. The teacher will cover the fundamental concepts of arithmetic, including addition, subtraction, multiplication, and division.
+  2. We will learn about basic geometric shapes and their properties.
+  
+  Guided Practice (15 minutes):
+  1. We will solve math problems as a class to practice the concepts covered in the lesson.
+  2. The teacher will provide explanations and guide us through the problem-solving process.
+  
+  Independent Practice (15 minutes):
+  1. We will receive worksheets with additional math problems to solve individually or in pairs.
+  2. Our teacher will be available to answer questions and provide assistance as needed.
+  
+  Closure (5 minutes):
+  1. We will review the key points of the lesson and discuss real-life applications of mathematics.
+  2. The teacher will encourage us to explore math beyond the classroom and appreciate its significance in everyday situations.
+  
+  Assessment:
+  Our understanding will be assessed based on our participation in class discussions and how well we complete the practice problems.`,
+  maths: `
+  Lesson Plan: Introduction to Math
+  
+  Objective:
+  By the end of this lesson, students will be able to understand the basic concepts of mathematics and its applications in daily life.
+  
+  Materials:
+  - Whiteboard and markers
+  - Student notebooks and pencils
+  
+  Introduction (10 minutes):
+  1. Our teacher will introduce the importance of mathematics in various fields and careers.
+  2. We will discuss how math is used in solving problems and making decisions.
+  
+  Direct Instruction (20 minutes):
+  1. The teacher will cover the fundamental concepts of arithmetic, including addition, subtraction, multiplication, and division.
+  2. We will learn about basic geometric shapes and their properties.
+  
+  Guided Practice (15 minutes):
+  1. We will solve math problems as a class to practice the concepts covered in the lesson.
+  2. The teacher will provide explanations and guide us through the problem-solving process.
+  
+  Independent Practice (15 minutes):
+  1. We will receive worksheets with additional math problems to solve individually or in pairs.
+  2. Our teacher will be available to answer questions and provide assistance as needed.
+  
+  Closure (5 minutes):
+  1. We will review the key points of the lesson and discuss real-life applications of mathematics.
+  2. The teacher will encourage us to explore math beyond the classroom and appreciate its significance in everyday situations.
+  
+  Assessment:
+  Our understanding will be assessed based on our participation in class discussions and how well we complete the practice problems.`,
       math: `
   Lesson Plan: Introduction to Math
   
