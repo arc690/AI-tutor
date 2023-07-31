@@ -248,9 +248,114 @@
         <li><a href="#about">About</a></li>
         <li><a href="#generator">Generate Lesson Plan</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li><a id="upgrade-icon" href="#" class="emoji">💎</a></li> <!-- Use the diamond emoji -->
       </ul>
     </nav>
   </header>
+  <style>
+    /* ... Previous CSS styles ... */
+
+    /* Additional CSS styles for the upgrade popup */
+    .upgrade-popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      z-index: 2;
+    }
+
+    .upgrade-popup h3 {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .upgrade-popup p {
+      font-size: 18px;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .upgrade-popup .btn-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .upgrade-popup .btn-container button {
+      padding: 15px 30px;
+      font-size: 20px;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      margin: 10px;
+    }
+
+    .upgrade-popup .btn-container button.free-plan {
+      background-color: #EF4146;
+    }
+
+    .upgrade-popup .btn-container button.paid-plan {
+      background-color: #009688;
+    }
+
+    /* Styling for emoji and close icon */
+    .upgrade-popup .emoji {
+      font-size: 36px;
+      display: block;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .upgrade-popup .close-icon {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    /* ... Previous CSS styles ... */
+  </style>
+ 
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Show the upgrade popup when the emoji (diamond) is clicked
+      document.getElementById('upgrade-icon').addEventListener('click', function() {
+        document.querySelector('.upgrade-popup').style.display = 'block';
+      });
+
+      // Close the upgrade popup when the "Close" icon is clicked
+      document.getElementById('close-upgrade-popup').addEventListener('click', function() {
+        document.querySelector('.upgrade-popup').style.display = 'none';
+      });
+    });
+  </script>
+  <div class="upgrade-popup">
+    <span id="close-upgrade-popup" class="close-icon">&times;</span>
+    <h3>Upgrade to GeniPlan Plus</h3>
+    <p>Unlock more features with our premium plans. Upgrade to GeniPlan Plus to enjoy the following benefits:</p>
+    <ul>
+      <li>Access to unlimited lesson plan templates</li>
+      <li>Premium customer support</li>
+      <li>Advanced AI-powered subject recommendations</li>
+      <li>Customizable lesson plan templates</li>
+      <li>Offline lesson plan export</li>
+    </ul>
+    <div class="btn-container">
+      <button class="free-plan">Free Plan</button>
+      <button class="paid-plan">Upgrade to Plus</button>
+    </div>
+  </div>
   <section id="hero">
     <div class="hero-content">
       <h1>GeniPlan</h1>
@@ -309,7 +414,7 @@
   
     .typing-animation {
       border-right: 2px solid #333;
-      animation: typing 5.5s steps(30, end), blink-caret 0.75s step-end infinite;
+      animation: typing 9.5s steps(30, end), blink-caret 0.75s step-end infinite;
     }
   </style>
   
@@ -325,14 +430,14 @@
         // Add a delay to make it appear as if the AI is generating the lesson plan
         setTimeout(function() {
           document.getElementById('lessonPlan').innerHTML = lessonPlan;
-        }, 4000);
+        }, 19000);
       } else {
         // If the topic is not recognized, show a generic message
         document.getElementById('lessonPlan').innerText = 'Generating lesson plan for ' + topic + '...';
         // Add a delay to make it appear as if the AI is generating the lesson plan
         setTimeout(function() {
           document.getElementById('lessonPlan').innerText = 'Sorry, no lesson plan available for this subject.';
-        }, 5000);
+        }, 7000);
       }
     }
   </script>
@@ -919,8 +1024,206 @@ Closure (5 minutes):
 Assessment:
 Our understanding will be assessed based on our participation in class conversations and the quality of our mini-dialogues in French.`,
 
-    // Add more subjects and lesson plan templates here...
+socialscience: `
+Lesson Plan: Introduction to Social Science
+
+Objective:
+By the end of this lesson, students will understand the interdisciplinary nature of social science and its significance in studying human societies.
+
+Materials:
+- Whiteboard and markers
+- Student notebooks and pencils
+
+Introduction (10 minutes):
+1. Our teacher will introduce the concept of social science and its various branches, such as anthropology, sociology, and political science.
+2. We will explore how social science helps us understand human behavior and societal structures.
+
+Direct Instruction (20 minutes):
+1. The teacher will explain the key methods and approaches used in social science research.
+2. We will learn about the role of social scientists in addressing real-world problems.
+
+Guided Practice (15 minutes):
+1. We will engage in a group discussion about a current social issue, analyzing it from different social science perspectives.
+2. Our teacher will guide us through the discussion and encourage critical thinking.
+
+Independent Practice (15 minutes):
+1. We will conduct brief research on a social science topic of our choice and present our findings.
+2. Each student will share their research insights with the class.
+
+Closure (5 minutes):
+1. We will discuss the importance of social science in promoting social change and improving societies.
+2. The teacher will encourage us to stay curious and explore social issues through a social science lens.
+
+Assessment:
+Our understanding will be assessed based on our participation in class discussions and the quality of our research presentations.`,
+
+    physics: `
+Lesson Plan: Introduction to Physics
+
+Objective:
+By the end of this lesson, students will be introduced to the fundamental concepts of physics and its applications in the real world.
+
+Materials:
+- Whiteboard and markers
+- Student notebooks and pencils
+
+Introduction (10 minutes):
+1. Our teacher will introduce physics as the study of matter, energy, and their interactions.
+2. We will explore how physics impacts various aspects of our daily lives.
+
+Direct Instruction (20 minutes):
+1. The teacher will cover fundamental physics principles, such as motion, forces, and energy.
+2. We will learn about the scientific method and its application in physics experiments.
+
+Guided Practice (15 minutes):
+1. We will conduct a simple physics experiment to understand concepts like gravity or momentum.
+2. Our teacher will guide us through the experimental process.
+
+Independent Practice (15 minutes):
+1. We will be assigned physics problems to solve individually or in groups.
+2. Each student will present their problem-solving approach to the class.
+
+Closure (5 minutes):
+1. We will discuss the practical applications of physics in technology and engineering.
+2. The teacher will encourage us to explore the wonders of the universe through physics.
+
+Assessment:
+Our understanding will be assessed based on our participation in experiments and problem-solving activities.`,
+civics: `
+Lesson Plan: Introduction to Civics and Government
+
+Objective:
+By the end of this lesson, students will understand the basics of civics and government and the importance of civic participation.
+
+Materials:
+- Whiteboard and markers
+- Student notebooks and pencils
+
+Introduction (10 minutes):
+1. Our teacher will introduce the concepts of civics and government and their relevance to our lives as citizens.
+2. We will explore the key components of a democratic system.
+
+Direct Instruction (20 minutes):
+1. The teacher will explain the roles and responsibilities of citizens in a democracy.
+2. We will learn about the three branches of government and their functions.
+
+Guided Practice (15 minutes):
+1. We will engage in a class discussion on current events and how they relate to civic issues.
+2. Our teacher will facilitate the discussion and encourage critical thinking.
+
+Independent Practice (15 minutes):
+1. We will research a civic topic of our choice and prepare a short presentation.
+2. Each student will present their findings and insights to the class.
+
+Closure (5 minutes):
+1. We will discuss the significance of civic engagement in shaping our communities and nation.
+2. The teacher will encourage us to actively participate in civic affairs and exercise our rights as responsible citizens.
+
+Assessment:
+Our understanding will be assessed based on our participation in class discussions and the quality of our research presentations.`,
+
+    geography: `
+Lesson Plan: Introduction to Geography
+
+Objective:
+By the end of this lesson, students will be able to understand the importance of geography in understanding our planet and its diverse environments.
+
+Materials:
+- World map and globe
+- Student notebooks and pencils
+
+Introduction (10 minutes):
+1. Our teacher will explain the significance of geography in studying Earth's landscapes and human interactions.
+2. We will learn about the five themes of geography: location, place, human-environment interaction, movement, and region.
+
+Direct Instruction (20 minutes):
+1. The teacher will explore different types of maps and explain how to read them.
+2. We will discover the diversity of climates, landforms, and ecosystems around the world.
+
+Guided Practice (15 minutes):
+1. We will examine maps to understand how geography influences cultures, trade, and historical events.
+2. The teacher will facilitate discussions about the interconnections between geography and societies.
+
+Independent Practice (15 minutes):
+1. We will work on a geography project, researching a country's geography and presenting our findings.
+2. Each student will showcase their project to the class.
+
+Closure (5 minutes):
+1. We will reflect on the significance of geography in shaping our understanding of the world.
+2. Our teacher will encourage us to stay curious and explore geographical phenomena in our daily lives.
+
+Assessment:
+Our understanding will be assessed based on our participation in class discussions and the quality of our geography project presentations.`,
+
+    economics: `
+Lesson Plan: Introduction to Economics
+
+Objective:
+By the end of this lesson, students will be familiar with basic economic principles and their applications in the real world.
+
+Materials:
+- Whiteboard and markers
+- Student notebooks and pencils
+
+Introduction (10 minutes):
+1. Our teacher will introduce economics as the study of how societies allocate scarce resources to satisfy unlimited wants.
+2. We will explore the concepts of supply, demand, and opportunity cost.
+
+Direct Instruction (20 minutes):
+1. The teacher will explain different economic systems and the role of markets in allocating resources.
+2. We will learn about various economic indicators and their significance.
+
+Guided Practice (15 minutes):
+1. We will analyze real-world economic scenarios and discuss their implications.
+2. Our teacher will encourage us to think critically about economic decision-making.
+
+Independent Practice (15 minutes):
+1. We will be given economic problems to solve individually or in groups.
+2. Each student will present their problem-solving approach to the class.
+
+Closure (5 minutes):
+1. We will discuss the impact of economics on our daily lives and global issues.
+2. The teacher will encourage us to be informed consumers and responsible economic participants.
+
+Assessment:
+Our understanding will be assessed based on our participation in class activities and the quality of our problem-solving approaches.`,
+
+    sciences: `
+Lesson Plan: Introduction to Science
+
+Objective:
+By the end of this lesson, students will be able to understand the scientific method and how it helps us learn about the world.
+
+Materials:
+- Whiteboard and markers
+- Student notebooks and pencils
+
+Introduction (10 minutes):
+1. Our teacher will explain the importance of science in understanding the world around us.
+2. We will learn about the scientific method and how scientists use it to investigate different phenomena.
+
+Direct Instruction (20 minutes):
+1. The teacher will explain the steps of the scientific method, including observation, hypothesis formation, experimentation, and conclusion.
+2. We will see examples of how the scientific method is used in everyday life and scientific research.
+
+Guided Practice (15 minutes):
+1. We will conduct a hands-on activity or experiment to understand the scientific method in action.
+2. Our teacher will encourage us to record our observations and draw conclusions based on our findings.
+
+Independent Practice (15 minutes):
+1. We will be divided into groups and assigned a scientific question to investigate using the scientific method.
+2. Each group will present their findings and conclusions to the class.
+
+Closure (5 minutes):
+1. We will review the significance of studying science and how it contributes to advancements in society.
+2. The teacher will encourage us to explore scientific topics beyond the classroom.
+
+Assessment:
+Our understanding will be assessed based on our participation in group presentations and class discussions.`,
   };
+
+    // Add more subjects and lesson plan templates here...
+
       
 
     function selectSubject(subject) {
@@ -936,7 +1239,7 @@ Our understanding will be assessed based on our participation in class conversat
         // Add a delay to make it appear as if the AI is generating the lesson plan
         setTimeout(function() {
           document.getElementById('lessonPlan').innerHTML = lessonPlan;
-        }, 4000);
+        }, 9000);
       } else {
         // If the topic is not recognized, show a generic message
         document.getElementById('lessonPlan').innerText = 'Generating lesson plan for ' + topic + '...';
