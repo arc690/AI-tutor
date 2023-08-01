@@ -386,6 +386,140 @@
     </button>
   </div>
 
+  <style>
+    /* ... Previous CSS styles ... */
+
+    /* Chatbot Section */
+    #chatbot-section {
+      background-color: #fff; /* Update background color to white */
+      padding: 30px;
+      text-align: center;
+      font-family: 'Roboto', Arial, sans-serif; /* Use the same font family as the rest of the site */
+    }
+
+    .chat-container {
+      max-width: 600px;
+      margin: 0 auto;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      background-color: #f9f9f9; /* Update background color to light gray */
+    }
+
+    .chat-header {
+      padding: 20px;
+      border-bottom: 1px solid #ddd;
+      background-color: #EF4146; /* Use a red color for the header */
+      color: #fff; /* Set text color to white */
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+
+    .chat-header h3 {
+      font-size: 24px;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    .chat-body {
+      padding: 20px;
+    }
+
+    .chat-messages {
+      text-align: left;
+      margin-bottom: 20px; /* Add some spacing between messages */
+    }
+
+    .chat-message {
+      font-size: 16px;
+      margin: 10px 0;
+    }
+
+    .user-message {
+      text-align: right; /* Align user's messages to the right */
+      color: #333; /* Set user's messages to black */
+    }
+
+    .bot-message {
+      text-align: left; /* Align bot's messages to the left */
+      color: #555; /* Set bot's messages to a dark gray */
+      background-color: #f5f5f5; /* Use a light gray background for bot's messages */
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .chat-input {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 20px;
+      border-top: 1px solid #ddd;
+      padding-top: 10px;
+    }
+
+    .chat-input input {
+      flex-grow: 1;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      outline: none;
+    }
+
+    .chat-input button {
+      margin-left: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #EF4146;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s;
+    }
+
+    .chat-input button:hover {
+      background-color: #8e3859;
+    }
+
+    .chat-input button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+
+    /* ... Previous CSS styles ... */
+  </style>
+  <script>
+    // ... Previous JavaScript code ...
+  </script>
+</head>
+<body>
+  <!-- ... Previous HTML code ... -->
+
+  <!-- AI Chatbot Section -->
+  <section id="chatbot-section">
+    <div class="chat-container">
+      <div class="chat-header">
+        <h3>GeniPlanAI</h3>
+      </div>
+      <div class="chat-body">
+        <div class="chat-messages">
+          <p class="chat-message bot-message">Welcome to the AI Chatbot! This is a premium feature.</p>
+          <p class="chat-message bot-message">Upgrade to the premium plan to access the AI Chatbot and get personalized learning support.</p>
+          <p class="chat-message bot-message">Click the 💎 icon to upgrade now!</p>
+          <p class="chat-message user-message">Hi, I'm interested in learning algebra. Can you help me with some lesson plans?</p>
+          <p class="chat-message bot-message">Sure! Here's a lesson plan for Introduction to Algebra:</p>
+          <p class="chat-message bot-message">[Lesson plan content for algebra...]</p>
+          <p class="chat-message bot-message">Let me know if you need any more assistance!</p>
+        </div>
+        <div class="chat-input">
+          <input type="text" placeholder="Type your message here..." disabled>
+          <button disabled>Send</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
 
   <script>
     // ... Previous JavaScript code ...
@@ -418,6 +552,22 @@
       <p>GeniPlan is an innovative AI-powered lesson plan writer that helps teachers create engaging and comprehensive lesson plans effortlessly. Whether you're teaching algebra, history, or any other subject, GeniPlan is here to assist you in crafting lesson plans tailored to your students' needs.</p>
     </div>
   </section>
+  <section id="whats-new-section">
+    <h2>What's New</h2>
+    <ul>
+      <li>New subjects added: Geometry, Hindi, Kannada, French, Civics, Geography, Economics, and more!</li>
+      <li>Improved AI chatbot with more learning support.</li>
+      <li>Enhanced lesson plan templates for better comprehension.</li>
+      <li>Optimized performance and bug fixes.</li>
+    </ul>
+  </section>
+
+  <!-- Join Our Discord Section -->
+  <section id="discord-section">
+    <h2>Join Our Discord</h2>
+    <p>Connect with our community on Discord to get the latest updates, share ideas, and collaborate with fellow educators!</p>
+    <a href="https://discord.gg/6dvR9wqB" target="_blank" class="discord-button">Join Discord</a>
+  </section>
 
   <section id="contact" class="contact">
     <div class="contact-content">
@@ -427,6 +577,72 @@
       <p>or join our Discord</p>
     </div>
   </section>
+
+  <style>
+    /* ... Previous CSS styles ... */
+
+    /* What's New Section */
+    #whats-new-section {
+      background-color: #f5f5f5;
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    #whats-new-section h2 {
+      font-size: 36px;
+      margin-bottom: 40px;
+    }
+
+    #whats-new-section ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 30px;
+    }
+
+    #whats-new-section li {
+      font-size: 18px;
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    /* Join Our Discord Section */
+    #discord-section {
+      background-color: #f5f5f5;
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    #discord-section h2 {
+      font-size: 36px;
+      margin-bottom: 40px;
+    }
+
+    #discord-section p {
+      font-size: 18px;
+      max-width: 800px;
+      margin: 0 auto;
+      margin-bottom: 30px;
+    }
+
+    #discord-section .discord-button {
+      display: inline-block;
+      padding: 12px 24px;
+      font-size: 18px;
+      font-weight: bold;
+      background-color: #7289da; /* Discord's brand color */
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    #discord-section .discord-button:hover {
+      background-color: #4e5d94; /* Darker shade on hover */
+    }
+
+    /* ... Previous CSS styles ... */
+  </style>
 
   <style>
     /* ... Previous CSS styles ... */
