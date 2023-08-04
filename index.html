@@ -425,6 +425,45 @@
     </button>
   </div>
 
+  <script>
+    const alternativeLessonPlans = {
+      Math: [
+        "Learn about basic arithmetic operations.",
+        "Explore geometric shapes and their properties.",
+        "Introduce algebraic expressions and equations.",
+        // Add more Math alternative lesson plans here
+      ],
+      Science: [
+        "Study the life cycle of a butterfly.",
+        "Conduct a chemistry experiment with household items.",
+        "Learn about the solar system and its planets.",
+        // Add more Science alternative lesson plans here
+      ],
+      History: [
+        "Discuss the American Revolution and its impact.",
+        "Explore ancient civilizations like Egypt and Mesopotamia.",
+        "Study the events leading up to World War II.",
+        // Add more History alternative lesson plans here
+      ],
+      // Add more subjects with their alternative lesson plans here
+    };
+    function regenerateLessonPlan() {
+      const subject = document.getElementById("regenerateInput").value;
+      const lessonPlans = alternativeLessonPlans[subject];
+
+      if (lessonPlans && lessonPlans.length > 0) {
+        const randomIndex = Math.floor(Math.random() * lessonPlans.length);
+        const randomLessonPlan = lessonPlans[randomIndex];
+
+        // Display the generated lesson plan (you can use an alert or update the DOM as needed)
+        alert(randomLessonPlan);
+      } else {
+        // If no alternative lesson plans are available for the subject, inform the user
+        alert("No alternative lesson plans found for this subject.");
+      }
+    }    
+  </script>
+
   <style>
     /* ... Previous CSS styles ... */
 
@@ -979,8 +1018,91 @@
   1. We will review the key points of the lesson and discuss real-life applications of mathematics.
   2. The teacher will encourage us to explore math beyond the classroom and appreciate its significance in everyday situations.
   
+  
   Assessment:
   Our understanding will be assessed based on our participation in class discussions and how well we complete the practice problems.`,
+
+
+    // ... Other subjects ...
+    
+    ssc: `
+    Lesson Plan: Introduction to Social Studies/SSC
+    
+    Objective:
+    By the end of this lesson, students will be able to understand the interdisciplinary nature of Social Studies and gain insights into various aspects of society, culture, and history.
+    
+    Materials:
+    - Whiteboard and markers
+    - Student notebooks and pencils
+    
+    Introduction (10 minutes):
+    1. Our teacher will introduce Social Studies as an integrated subject that combines elements of history, geography, economics, and civics.
+    2. We will discuss the importance of Social Studies in understanding human societies and the world around us.
+    
+    History (20 minutes):
+    1. The teacher will provide an overview of key historical events and periods.
+    2. We will explore how past events have shaped the present and impacted different cultures and civilizations.
+    
+    Geography (20 minutes):
+    1. We will learn about different geographical features and their significance in shaping human settlements and interactions.
+    2. The teacher will use maps and visuals to help us understand global and regional geography.
+    
+    Economics (15 minutes):
+    1. We will discuss basic economic principles, such as supply and demand, production, and consumption.
+    2. The teacher will highlight the role of economics in societal development and decision-making.
+    
+    Civics (15 minutes):
+    1. We will explore the principles of citizenship and democracy.
+    2. The teacher will discuss the importance of active participation in civic life.
+    
+    Interdisciplinary Project (30 minutes):
+    1. We will work in groups to research and present a project that connects multiple aspects of Social Studies.
+    2. Each group will showcase their project to the class.
+    
+    Closure (5 minutes):
+    1. We will reflect on the significance of Social Studies in fostering critical thinking and global awareness.
+    2. Our teacher will encourage us to explore further topics in Social Studies that interest us.
+    
+    Assessment:
+    Our understanding will be assessed based on our engagement in class discussions, group projects, and the quality of our presentations.`,
+
+    english: `
+    Lesson Plan: Introduction to English Language
+    
+    Objective:
+    By the end of this lesson, students will be able to understand the basic concepts of the English language and enhance their communication skills.
+    
+    Materials:
+    - Whiteboard and markers
+    - Student notebooks and pencils
+    
+    Introduction (10 minutes):
+    1. Our teacher will introduce the importance of the English language as a global means of communication.
+    2. We will learn about the four language skills: reading, writing, listening, and speaking.
+    
+    Vocabulary and Grammar (20 minutes):
+    1. The teacher will cover essential vocabulary and grammar rules, such as nouns, verbs, adjectives, and tenses.
+    2. We will engage in interactive activities to practice vocabulary and grammar usage.
+    
+    Reading and Comprehension (15 minutes):
+    1. We will read a short passage and work on comprehension questions to improve reading skills.
+    2. Our teacher will guide us on how to find main ideas and draw inferences from the text.
+    
+    Writing Practice (15 minutes):
+    1. We will participate in a writing exercise to compose a short paragraph using the vocabulary and grammar learned in this lesson.
+    2. The teacher will provide feedback to help improve our writing skills.
+    
+    Speaking and Listening (15 minutes):
+    1. We will engage in pair or group discussions to practice speaking and listening to others.
+    2. Our teacher will encourage active participation to enhance oral communication skills.
+    
+    Closure (5 minutes):
+    1. We will summarize the key points of the lesson and discuss the importance of continuous practice to improve language skills.
+    2. Our teacher will provide resources for self-study and additional practice.
+    
+    Assessment:
+    Our understanding will be assessed based on our participation in class activities and our performance in the writing exercise and discussions.`,
+ 
   maths: `
   Lesson Plan: Introduction to Math
   
