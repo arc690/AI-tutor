@@ -426,42 +426,34 @@
   </div>
 
   <script>
-    const alternativeLessonPlans = {
-      Math: [
-        "Learn about basic arithmetic operations.",
-        "Explore geometric shapes and their properties.",
-        "Introduce algebraic expressions and equations.",
-        // Add more Math alternative lesson plans here
-      ],
-      Science: [
-        "Study the life cycle of a butterfly.",
-        "Conduct a chemistry experiment with household items.",
-        "Learn about the solar system and its planets.",
-        // Add more Science alternative lesson plans here
-      ],
-      History: [
-        "Discuss the American Revolution and its impact.",
-        "Explore ancient civilizations like Egypt and Mesopotamia.",
-        "Study the events leading up to World War II.",
-        // Add more History alternative lesson plans here
-      ],
-      // Add more subjects with their alternative lesson plans here
-    };
-    function regenerateLessonPlan() {
-      const subject = document.getElementById("regenerateInput").value;
-      const lessonPlans = alternativeLessonPlans[subject];
+function regenerateLessonPlan() {
+  const subject = document.getElementById('regenerateInput').value.toLowerCase();
 
-      if (lessonPlans && lessonPlans.length > 0) {
-        const randomIndex = Math.floor(Math.random() * lessonPlans.length);
-        const randomLessonPlan = lessonPlans[randomIndex];
+  const alternativePlans = alternativeLessonPlans[subject];
+  if (alternativePlans && alternativePlans.length > 0) {
+    // Generate a random index to pick an alternative lesson plan from the list
+    const randomIndex = Math.floor(Math.random() * alternativePlans.length);
+    const alternativePlan = alternativePlans[randomIndex];
+    document.getElementById('lessonPlan').innerHTML = alternativePlan;
+  } else {
+    document.getElementById('lessonPlan').innerText = 'Sorry, no alternative lesson plans available for this subject.';
+  }
+}
+const alternativeLessonPlans = {
+  algebra: [
+    `Lesson Plan: Advanced Algebra\n\nObjective:\nBy the end of this lesson, students will be able to apply advanced algebraic concepts in solving complex problems.\n\n... (add more details)`,
+    `Lesson Plan: Algebra in Real-Life Applications\n\nObjective:\nBy the end of this lesson, students will be able to understand how algebra is used in practical situations.\n\n... (add more details)`,
+    // Add more alternative lesson plans for the subject "algebra"
+  ],
+  science: [
+    // Add alternative lesson plans for the subject "science"
+  ],
+  history: [
+    // Add alternative lesson plans for the subject "history"
+  ],
+  // Add more subjects and their alternative lesson plans here
+};
 
-        // Display the generated lesson plan (you can use an alert or update the DOM as needed)
-        alert(randomLessonPlan);
-      } else {
-        // If no alternative lesson plans are available for the subject, inform the user
-        alert("No alternative lesson plans found for this subject.");
-      }
-    }    
   </script>
 
   <style>
@@ -598,6 +590,177 @@
     </div>
   </section>
 
+  <section id="reviews" class="reviews">
+  <h2>What Users Are Saying</h2>
+  <div class="review-card">
+    <div class="review-content">
+      <p class="review-text">"GeniPlan has made learning enjoyable and efficient. Highly recommend it to all students!"</p>
+      <p class="review-author">- Jason Lee, High School Student</p>
+    </div>
+  </div>
+  <div class="review-card">
+    <div class="review-content">
+      <p class="review-text">"I've tried many study tools, but GeniPlan stands out with its personalized lesson plans."</p>
+      <p class="review-author">- Aishwarya Singh, College Student</p>
+    </div>
+  </div>
+  <div class="review-card">
+    <div class="review-content">
+      <p class="review-text">"Using GeniPlan has significantly improved my grades. It's a game-changer!"</p>
+      <p class="review-author">- Ryan Johnson, Middle School Student</p>
+    </div>
+  </div>
+  <div class="review-card">
+    <div class="review-content">
+      <p class="review-text">"As a parent, I'm thrilled to see my child excited about learning with GeniPlan."</p>
+      <p class="review-author">- Priya Patel, Parent</p>
+    </div>
+  </div>
+  <div class="review-card">
+    <div class="review-content">
+      <p class="review-text">"GeniPlan's AI is impressive! It understands my learning needs better than any other tool."</p>
+      <p class="review-author">- Kevin Smith, High School Student</p>
+    </div>
+  </div>
+  <div class="review-card">
+    <div class="review-content">
+      <p class="review-text">"The lesson plans are well-structured and easy to follow. GeniPlan is a must-have for students!"</p>
+      <p class="review-author">- Nisha Kumar, College Student</p>
+    </div>
+  </div>
+  <div class="review-card">
+    <div class="review-content">
+      <p class="review-text">"I'm amazed by the diversity of lesson plans. It keeps the learning experience fresh and exciting!"</p>
+      <p class="review-author">- Ethan Wilson, High School Student</p>
+    </div>
+  </div>
+  <div class="review-card">
+    <div class="review-content">
+      <p class="review-text">"GeniPlan has been a great study companion. It has improved my grades and confidence!"</p>
+      <p class="review-author">- Meera Desai, College Student</p>
+    </div>
+  </div>
+  <div class="review-card">
+    <div class="review-content">
+      <p class="review-text">"I love how easy it is to generate lesson plans for any subject. GeniPlan is a time-saver!"</p>
+      <p class="review-author">- Daniel Brown, Middle School Student</p>
+    </div>
+  </div>
+  <div class="review-card">
+    <div class="review-content">
+      <p class="review-text">"GeniPlan's lesson plans are thorough and well-researched. It's a valuable study tool!"</p>
+      <p class="review-author">- Neha Sharma, College Student</p>
+    </div>
+  </div>
+  <div class="review-card">
+    <div class="review-content">
+      <p class="review-text">"I'm grateful for the AI chatbot. It helps me clarify doubts and understand concepts better."</p>
+      <p class="review-author">- Matthew Clark, High School Student</p>
+    </div>
+  </div>
+  <div class="review-card">
+    <div class="review-content">
+      <p class="review-text">"GeniPlan's interactive features make learning engaging and fun. I look forward to studying now!"</p>
+      <p class="review-author">- Riya Patel, College Student</p>
+    </div>
+  </div>
+  <div class="review-card">
+    <div class="review-content">
+      <p class="review-text">"The AI-generated lesson plans are so detailed and tailored to our curriculum. Great job!"</p>
+      <p class="review-author">- Michael Anderson, High School Teacher</p>
+    </div>
+  </div>
+  <div class="review-card">
+    <div class="review-content">
+      <p class="review-text">"I find the AI chatbot incredibly helpful. It explains complex topics in a simple manner."</p>
+      <p class="review-author">- Sanjay Gupta, College Student</p>
+    </div>
+  </div>
+  <div class="review-card">
+    <div class="review-content">
+      <p class="review-text">"GeniPlan is the best study tool I've used. The lesson plans cover everything I need to know."</p>
+      <p class="review-author">- Olivia Johnson, Middle School Student</p>
+    </div>
+  </div>
+  <!-- Add more review cards here -->
+</section>
+
+<style>
+/* CSS styles for the reviews section */
+.reviews {
+  padding: 80px 0;
+  text-align: center;
+  background-color: #36393F; /* Discord theme color */
+  color: #fff; /* Text color */
+}
+
+.reviews h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
+.review-card {
+  background-color: #40444B; /* Darker background color for review cards */
+  padding: 30px;
+  border-radius: 8px; /* Slightly smaller border radius for review cards */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px;
+  max-width: 800px;
+  margin: 0 auto;
+  transition: transform 0.2s;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+}
+
+.review-text {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #fff; /* Review text color */
+}
+
+.review-author {
+  font-size: 16px;
+  font-style: italic;
+  color: #999; /* Author name color */
+  margin-top: 10px;
+}
+
+/* Add a separator between review cards */
+.review-card:not(:last-child) {
+  border-bottom: 1px solid #333; /* Darker separator color */
+}
+
+/* Add a button to view all reviews */
+.view-all-button {
+  margin-top: 20px;
+}
+
+.view-all-button a {
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #7289DA; /* Discord accent color */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.view-all-button a:hover {
+  background-color: #5B6F99; /* Darker hover color for the button */
+}
+
+/* Adjust the styles for smaller screens */
+@media (max-width: 767px) {
+  .review-card {
+    padding: 20px;
+  }
+}
+</style>
+
+
+
 
   <script>
     // ... Previous JavaScript code ...
@@ -630,15 +793,28 @@
       <p>GeniPlan is an innovative AI-powered lesson plan writer that helps teachers create engaging and comprehensive lesson plans effortlessly. Whether you're teaching algebra, history, or any other subject, GeniPlan is here to assist you in crafting lesson plans tailored to your students' needs.</p>
     </div>
   </section>
-  <section id="whats-new-section">
+ <section id="whats-new" class="whats-new">
+  <div class="container">
     <h2>What's New</h2>
     <ul>
       <li>New subjects added: Geometry, Hindi, Kannada, French, Civics, Geography, Economics, and more!</li>
-      <li>Improved AI chatbot with more learning support.</li>
-      <li>Enhanced lesson plan templates for better comprehension.</li>
-      <li>Optimized performance and bug fixes.</li>
+      <li>Improved AI chatbot with enhanced learning support and more interactive responses.</li>
+      <li>Enhanced lesson plan templates for better comprehension and engagement.</li>
+      <li>Optimized performance for faster lesson plan generation.</li>
+      <li>Bug fixes and overall stability improvements for a smoother experience.</li>
+      <li>Introducing the Regenerate feature: Generate alternative lesson plans for any subject!</li>
+      <li>Join our Discord community to connect with fellow educators and share ideas.</li>
+      <li>Check out our new art.png representing our mission to empower teachers and students.</li>
+      <li>Introducing the Premium AI Chatbot: Unlock more advanced features with our premium plan.</li>
+      <li>Explore the new Reviews section to see what educators are saying about GeniPlan!</li>
+      <li>UI and design enhancements for a more appealing and user-friendly experience.</li>
+      <li>Stay tuned for more exciting updates and features!</li>
     </ul>
-  </section>
+  </div>
+</section>
+
+
+
 
   <!-- Join Our Discord Section -->
   <section id="discord-section">
